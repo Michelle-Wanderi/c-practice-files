@@ -1,0 +1,439 @@
+// i)          Differentiate between the following terms as used in Object Orientation
+// a)     Structure and Class
+// b)     Member variables and Function members                  [4marks] 
+// Structure is a variable/user defined data type that can contain elements/items/data of different data type under the same name.
+// Class is a variable/user defined data type that contain elements/items/data and also operations/methods/functions                             1. Structure only contain data members
+//     class contains both data and functions   
+// 2. Structure there is no access specifiers for the data members but in a class there is class specifiers for data and function members. private, public and protected 
+
+// Member variable is/are data members that are declared in a class. Function members are the operations/method that are  used to access the data members                                                                                     
+// b)
+     
+Student      
+Registration  Number: String
+First  Name: String
+Last  Name: String
+Marks  : int
+        
+getStudentDetails():void 
+computeStudentGrade():char
+displayStudentDetails():void
+   
+   
+Syntax:
+return_data_type function_name(parameters)
+{
+  //body    
+}
+return_data_type : is the data type of the final result to be returned: float,int,char,double,bool, void  
+function_name: Any valid identifier
+parameters/arguments: Placeholder/variables for the values passed to the function,optional
+Example: A function that accept the average marks and compute the grade of the student using the grading system below:
+70-100   A
+60-69     B
+50-59     C
+40-49     D
+ 0-39      E
+#include<iostream>
+#include<math.h>
+using namespace std;
+char computeStudentGrade(int avg)
+{
+  char grade;
+  if(avg>=70 && avg<=100)
+     grade='A';
+  else if(avg>=60 && avg<70)
+     grade='B';
+  else if(avg>=50 && avg<60)
+     grade='C';
+  else if(avg>=40 && avg<50)
+     grade='D';
+  else
+     grade='E';
+   return grade;
+   //cout<<"The grade is: "<<grade<<endl;
+}
+main()
+{
+  int mk1,mk2,mk3,total,av;
+  char grd;
+  mk1=90;
+  mk2=58;
+  mk3=78;
+  total=mk1+mk2+mk3;
+  av=total/3;
+  grd=computeStudentGrade(av);
+  cout<<"Mathematics: "<<mk1<<endl;
+  cout<<"Geography: "<<mk2<<endl;
+  cout<<"Chemistry: "<<mk3<<endl;
+  cout<<"Total marks: "<<total<<endl;
+  cout<<"Average marks: "<<av<<endl;
+  cout<<"Grade: "<<grd<<endl;
+}
+   Student      
+Registration  Number: String
+First  Name: String
+Last  Name: String
+Marks  : int
+        
+getStudentDetails():void 
+computeStudentGrade():char
+displayStudentDetails():void
+
+#include<iostream>
+using namespace std;
+class Student
+{
+  private:
+   string registrationNumber,firstName,lastName;
+   int marks;
+   public:
+   void getStudentDetails();
+   char computeStudentGrade();
+   void displayStudentDetails();
+};
+void Student::getStudentDetails()
+{
+   cout<<"Enter Registration Number: ";
+   getline(cin,registrationNumber);
+   cout<<"Enter First Name: ";
+   getline(cin,firstName);
+   cout<<"Enter Last Name: ";
+   getline(cin,lastName);
+   cout<<"Enter marks: ";
+   cin>>marks;
+}
+char Student::computeStudentGrade()
+{
+  char grade;
+  if(marks>=70 && marks<=100)
+     grade='A';
+  else if(marks>=60 && marks<70)
+     grade='B';
+  else if(marks>=50 && marks<60)
+     grade='C';
+  else if(marks>=40 && marks<50)
+     grade='D';
+  else
+     grade='E';
+   return grade;
+}
+void Student::displayStudentDetails()
+{
+  cout<<"Registration Number: "<<registrationNumber<<endl;
+   cout<<"First Name: "<<firstName<<endl;
+   cout<<"Last Name: "<<lastName<<endl;
+   cout<<"Marks obtained: "<<marks<<endl;
+   cout<<"The grade: "<<computeStudentGrade()<<endl;
+}
+main()
+{
+  Student S;
+  S.getStudentDetails();
+  S.displayStudentDetails();
+}
+#include<iostream>
+using namespace std;
+class Student
+{
+  private:
+   string registrationNumber,firstName,lastName;
+   int marks;
+   public:
+   void getStudentDetails();
+   char computeStudentGrade();
+   void displayStudentDetails();
+};
+void Student::getStudentDetails()
+{
+   cout<<"Enter Registration Number: ";
+   getline(cin,registrationNumber);
+   cout<<"Enter First Name: ";
+   getline(cin,firstName);
+   cout<<"Enter Last Name: ";
+   getline(cin,lastName);
+   cout<<"Enter marks: ";
+   cin>>marks;
+}
+char Student::computeStudentGrade()
+{
+  char grade;
+  if(marks>=70 && marks<=100)
+     grade='A';
+  else if(marks>=60 && marks<70)
+     grade='B';
+  else if(marks>=50 && marks<60)
+     grade='C';
+  else if(marks>=40 && marks<50)
+     grade='D';
+  else
+     grade='E';
+   return grade;
+}
+void Student::displayStudentDetails()
+{
+  cout<<"Registration Number: "<<registrationNumber<<endl;
+   cout<<"First Name: "<<firstName<<endl;
+   cout<<"Last Name: "<<lastName<<endl;
+   cout<<"Marks obtained: "<<marks<<endl;
+   //cout<<"The grade: "<<computeStudentGrade()<<endl;
+}
+main()
+{
+  Student S;
+  S.getStudentDetails();
+  S.displayStudentDetails();
+  cout<<"The grade: "<<S.computeStudentGrade()<<endl;
+}
+
+#include<iostream>
+using namespace std;
+class Student
+{
+  private:
+   string registrationNumber,firstName,lastName;
+   int marks;
+   public:
+   void getStudentDetails();
+   char computeStudentGrade();
+   void displayStudentDetails();
+};
+void Student::getStudentDetails()
+{
+   cout<<"Enter Registration Number: ";
+   getline(cin,registrationNumber);
+   cout<<"Enter First Name: ";
+   getline(cin,firstName);
+   cout<<"Enter Last Name: ";
+   getline(cin,lastName);
+   cout<<"Enter marks: ";
+   cin>>marks;
+}
+char Student::computeStudentGrade()
+{
+  char grade;
+  if(marks>=70 && marks<=100)
+     grade='A';
+  else if(marks>=60 && marks<70)
+     grade='B';
+  else if(marks>=50 && marks<60)
+     grade='C';
+  else if(marks>=40 && marks<50)
+     grade='D';
+  else
+     grade='E';
+   return grade;
+}
+void Student::displayStudentDetails()
+{
+  cout<<"Registration Number: "<<registrationNumber<<endl;
+   cout<<"First Name: "<<firstName<<endl;
+   cout<<"Last Name: "<<lastName<<endl;
+   cout<<"Marks obtained: "<<marks<<endl;
+   //cout<<"The grade: "<<computeStudentGrade()<<endl;
+}
+main()
+{
+  Student S;
+  char grd;
+  S.getStudentDetails();
+  S.displayStudentDetails();
+  grd=S.computeStudentGrade()
+  cout<<"The grade: "<<grd<<endl;
+}
+
+    #include<iostream>
+using namespace std;
+class Student
+{
+  private:
+   string registrationNumber,firstName,lastName;
+   int marks;
+   public:
+   void getStudentDetails();
+   char computeStudentGrade();
+   void displayStudentDetails();
+};
+void Student::getStudentDetails()
+{
+   cout<<"Enter Registration Number: ";
+   getline(cin,registrationNumber);
+   cout<<"Enter First Name: ";
+   getline(cin,firstName);
+   cout<<"Enter Last Name: ";
+   getline(cin,lastName);
+   cout<<"Enter marks: ";
+   cin>>marks;
+}
+char Student::computeStudentGrade()
+{
+  char grade;
+  if(marks>=70 && marks<=100)
+     grade='A';
+  else if(marks>=60 && marks<70)
+     grade='B';
+  else if(marks>=50 && marks<60)
+     grade='C';
+  else if(marks>=40 && marks<50)
+     grade='D';
+  else
+     grade='E';
+   return grade;
+}
+void Student::displayStudentDetails()
+{
+  cout<<"Registration Number: "<<registrationNumber<<endl;
+   cout<<"First Name: "<<firstName<<endl;
+   cout<<"Last Name: "<<lastName<<endl;
+   cout<<"Marks obtained: "<<marks<<endl;
+   //cout<<"The grade: "<<computeStudentGrade()<<endl;
+}
+main()
+{
+  Student S1,S2,S3;
+  char grd;
+  cout<<"Details of the first student"<<endl;
+  cout<<"----------------------------"<<endl;
+  S1.getStudentDetails();
+  S1.displayStudentDetails();
+  grd=S1.computeStudentGrade();
+  cout<<"The grade: "<<grd<<endl;
+  cout<<"Details of the second student"<<endl;
+  cout<<"----------------------------"<<endl;
+  S2.getStudentDetails();
+  S2.displayStudentDetails();
+  grd=S2.computeStudentGrade();
+  cout<<"The grade: "<<grd<<endl;
+  cout<<"Details of the third student"<<endl;
+  cout<<"----------------------------"<<endl;
+  S3.getStudentDetails();
+  S3.displayStudentDetails();
+  grd=S3.computeStudentGrade();
+  cout<<"The grade: "<<grd<<endl;
+}
+
+#include<iostream>
+using namespace std;
+class Student
+{
+  private:
+   string registrationNumber,firstName,lastName;
+   int marks;
+   public:
+   void getStudentDetails();
+   char computeStudentGrade();
+   void displayStudentDetails();
+};
+void Student::getStudentDetails()
+{
+   cout<<"Enter Registration Number: ";
+   getline(cin,registrationNumber);
+   cout<<"Enter First Name: ";
+   getline(cin,firstName);
+   cout<<"Enter Last Name: ";
+   getline(cin,lastName);
+   cout<<"Enter marks: ";
+   cin>>marks;
+}
+char Student::computeStudentGrade()
+{
+  char grade;
+  if(marks>=70 && marks<=100)
+     grade='A';
+  else if(marks>=60 && marks<70)
+     grade='B';
+  else if(marks>=50 && marks<60)
+     grade='C';
+  else if(marks>=40 && marks<50)
+     grade='D';
+  else
+     grade='E';
+   return grade;
+}
+void Student::displayStudentDetails()
+{
+  cout<<"Registration Number: "<<registrationNumber<<endl;
+   cout<<"First Name: "<<firstName<<endl;
+   cout<<"Last Name: "<<lastName<<endl;
+   cout<<"Marks obtained: "<<marks<<endl;
+   //cout<<"The grade: "<<computeStudentGrade()<<endl;
+}
+
+main()
+{
+  Student S[5];
+  int i;
+  char grd;
+  for(i=0;i<5;i++)
+  {
+    cout<<"Details for student: "<<i+1<<endl;
+    cout<<"---------------------"<<endl;
+    S[i].getStudentDetails();
+    S[i].displayStudentDetails();
+    grd=S[i].computeStudentGrade();
+    cout<<"The grade: "<<grd<<endl;
+  }
+}
+
+#include<iostream>
+using namespace std;
+class Student
+{
+  private:
+   string registrationNumber,firstName,lastName;
+   int marks;
+   public:
+   void getStudentDetails();
+   char computeStudentGrade();
+   void displayStudentDetails();
+};
+void Student::getStudentDetails()
+{
+   cout<<"Enter Registration Number: ";
+   getline(cin,registrationNumber);
+   cout<<"Enter First Name: ";
+   getline(cin,firstName);
+   cout<<"Enter Last Name: ";
+   getline(cin,lastName);
+   cout<<"Enter marks: ";
+   cin>>marks;
+}
+char Student::computeStudentGrade()
+{
+  char grade;
+  if(marks>=70 && marks<=100)
+     grade='A';
+  else if(marks>=60 && marks<70)
+     grade='B';
+  else if(marks>=50 && marks<60)
+     grade='C';
+  else if(marks>=40 && marks<50)
+     grade='D';
+  else
+     grade='E';
+   return grade;
+}
+void Student::displayStudentDetails()
+{
+  cout<<"Registration Number: "<<registrationNumber<<endl;
+   cout<<"First Name: "<<firstName<<endl;
+   cout<<"Last Name: "<<lastName<<endl;
+   cout<<"Marks obtained: "<<marks<<endl;
+   //cout<<"The grade: "<<computeStudentGrade()<<endl;
+}
+
+main()
+{
+  Student S[];
+  int i;
+  char grd;
+  for(i=0;i<5;i++)
+  {
+    cout<<"Details for student: "<<i+1<<endl;
+    cout<<"---------------------"<<endl;
+    S[i].getStudentDetails();
+    S[i].displayStudentDetails();
+    grd=S[i].computeStudentGrade();
+    cout<<"The grade: "<<grd<<endl;
+  }
+}
